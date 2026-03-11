@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springAI
+
+  ai:
+    dashscope:
+      api-key: sk-b72e0ee0ac2f4964bc7ac7143a43cadf
+
+
