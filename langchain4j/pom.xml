@@ -60,20 +60,46 @@
 <!--            <version>1.0.1</version>-->
 <!--        </dependency>-->
 
-        <!-- Spring Boot 集成langchain4j写法-->
+        <!-- LangChain4j OpenAI 兼容模型支持（支持阿里云 DashScope） -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
-            <version>1.0.1-beta6</version>
+            <version>1.9.1-beta17</version>
         </dependency>
 
-<!--        引入AiServices相关依赖-->
+        <!-- LangChain4j 核心库（包含 @AiService 注解） -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
-            <version>1.12.2</version>
-            <scope>compile</scope>
+            <version>1.9.1</version>
         </dependency>
+
+        <!-- LangChain4j Spring Boot Starter（Spring 集成支持） -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-spring-boot-starter</artifactId>
+            <version>1.0.1-beta6</version>
+        </dependency>
+
+        <!-- WebFlux 响应式编程支持（用于流式输出 Flux） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <!-- LangChain4j Reactor 支持（响应式流） -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-reactor</artifactId>
+            <version>1.9.1-beta17</version>
+        </dependency>
+
+<!--        redis依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 
 
     </dependencies>

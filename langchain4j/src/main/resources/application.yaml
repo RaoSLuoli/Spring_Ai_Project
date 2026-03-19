@@ -1,6 +1,12 @@
 langchain4j:
   open-ai:
-    chat-model:
+    chat-model: #??????
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: sk-b72e0ee0ac2f4964bc7ac7143a43cadf
+      model-name: qwen-plus
+      log-requests: true #??????
+      log-responses: true #??????
+    streaming-chat-model: #??????
       base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
       api-key: sk-b72e0ee0ac2f4964bc7ac7143a43cadf
       model-name: qwen-plus
@@ -10,3 +16,16 @@ logging:
   level:
     dev.langchain4j: debug #????
 
+
+redisHost: 192.168.2.4
+redisPort: 16379
+redisPwd: password_Welcome%123
+
+spring:
+  data:
+    redis:
+      host: ${redisHost}
+      port: ${redisPort}
+      password: ${redisPwd}
+  cache:
+    type: redis

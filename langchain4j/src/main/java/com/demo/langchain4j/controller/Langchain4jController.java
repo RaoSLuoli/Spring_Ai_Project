@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/ai")
@@ -46,10 +47,20 @@ public class Langchain4jController {
 //        return result;
 //    }
 
-    /**使用AiServices工具类创建*/
-    @RequestMapping("/chat")
-    public String chat(String message){
-        String result = consultantService.chat(message);
+//    /**使用AiServices工具类创建*/
+//    @RequestMapping("/chat")
+//    public String chat(String message){
+//        String result = consultantService.chat(message);
+//        return result;
+//    }
+
+    /**使用AiServices工具类创建,流式调用*/
+    @RequestMapping(value = "/chat",produces = "text/html;charset=utf-8")
+    public Flux<String> chat(
+            @RequestParam String memoryId,
+            @RequestParam String message
+    ){
+        Flux<String> result = consultantService.chat(memoryId,message);
         return result;
     }
 
